@@ -511,7 +511,7 @@
 
 						</div>
 						<!-- <v-paginator :resource_url="resource_url" @update="updateResource"></v-paginator> -->
-						<div class="four columns" style="margin-left: 2%; text-align: center;" v-for="car in cars">
+						<div class="four columns" style="margin-left: 2%; text-align: center;" v-for="car in cars" v-if="car !== undefined">
 							<div class="u-full-widths">
 								<div class="u-full-width u-pull-left">
 									<img :src="car.attrs.img">
@@ -528,14 +528,13 @@
 							</div>
 						</div>
 						<nav class="u-full-width" id="gellery__paging" class="gallery__paging">
-							<button class="gallery__paging__cmd gallery__paging__cmd--symbol">&laquo;</button>
-							<button class="gallery__paging__cmd gallery__paging__cmd--symbol">&lsaquo;</button>
-							<button class="gallery__paging__cmd is-active">1</button>
-							<button class="gallery__paging__cmd">2</button>
-							<button class="gallery__paging__cmd">3</button>
-							<button class="gallery__paging__cmd">4</button>
-							<button class="gallery__paging__cmd gallery__paging__cmd--symbol">&rsaquo;</button>
-							<button class="gallery__paging__cmd gallery__paging__cmd--symbol">&raquo;</button>
+							<button @click="make_cars(1)" class="gallery__paging__cmd gallery__paging__cmd--symbol">&laquo;</button>
+							<button @click="make_cars(current_pager - 1)" class="gallery__paging__cmd gallery__paging__cmd--symbol">&lsaquo;</button>
+							<span v-for="n in pager_count">
+							<button @click="make_cars(n)" class="gallery__paging__cmd is-active">{{n}}</button>
+							</span>
+							<button @click="make_cars(current_pager + 1)" class="gallery__paging__cmd gallery__paging__cmd--symbol">&rsaquo;</button>
+							<button @click="make_cars(pager_count)" class="gallery__paging__cmd gallery__paging__cmd--symbol">&raquo;</button>
 						</nav>
 					</section>
 				</section>

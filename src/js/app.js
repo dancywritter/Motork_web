@@ -13,7 +13,8 @@ var app = new Vue({
 		cars: [],
 		cars_count: '',
 		resource_url: 'http://127.0.0.1:8080/data/cars.json',
-		// pager_count:this.cars_count/9.tofixed(0)
+		pager_count: '',
+		current_pager: ''
 	},
 	beforeCreate() {
 		window.$this = this
@@ -30,6 +31,11 @@ var app = new Vue({
 			axios.get('../data/cars.json')
 			.then(response => {
 				this.total_cars = response.data
+				this.cars_count = this.total_cars.length
+				this.pager_count = this.cars_count/9
+				this.pager_count = Math.ceil(this.pager_count)
+				// this.pager_coun = this.roundUsing(Math.ceil, 5.25, 0)
+				console.log(this.pager_count)
   			// console.log(this.total_cars[0])
   			this.make_cars(1) 
   			// this.updateResource(response.data)
@@ -46,16 +52,17 @@ var app = new Vue({
 			this.cars = data
 		},
 		make_cars(pager) {
+			this.current_pager = pager
 			this.cars =[]
 			for (var i = (pager-1)*9; i <= pager*9 - 1; i++) {
     		// console.log(data[i])
     		// if (i <= (pager*8) && (pager*8) <= i*8 ) {
-    		if (i <= (pager*9)) {
-    			$this.cars.push($this.total_cars[i])
+    			if (i <= (pager*9)) {
+    				$this.cars.push($this.total_cars[i])
+    			}
     		}
+    		console.log(this.cars)
     	}
-    	console.log(this.cars)
     }
-}
 })
 

@@ -489,7 +489,7 @@ svg {
 	top: 0;
 	bottom: 0;
 	right: 0;
-  left: 0;
+	left: 0;
 }
 
 .layout {
@@ -1548,4 +1548,8 @@ label[for="project-upload"] {
 	-ms-flex-preferred-size: 25%;
 	flex-basis: 25%;
 	margin-bottom: 1em;
+}
+#gellery__paging {
+	display: inline-block;
+	text-align: center;
 }
