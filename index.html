@@ -369,7 +369,7 @@
 								<progress class="form__upload"></progress>
 								<label class="form__el" for="project-upload">
 									Upload your file (.jpg/.jpeg/.png)
-									<input type="file" name="project-upload" id="project-upload"
+									<input @change="image_validation" type="file" name="project-upload" id="project-upload"
 									accept=".jpg,.jpeg,.png" class="hidden">
 								</label>
 							</div>
