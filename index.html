@@ -85,7 +85,7 @@
 </div>
 </header>
 
-<main class="main-content">
+<main class="main-content" id="application">
 	<section class="slider-wrapper slider-wrapper--main">
 		<div class="layout-wrapper layout-wrapper--absolute">
 			<header class="slider__head">
@@ -168,7 +168,7 @@
 								<a href="#" class="btn btn--sec">Download the template</a>
 							</div>
 							<div class="form-wrapper">
-								<form id="form-partecipate" name="form-partecipate" action="/" method="POST">
+								<form @submit.stop.prevent="form_partecipate_onSubmit" id="form-partecipate" name="form-partecipate" method="POST">
 									<h2 class="heading heading--sec heading--branded">Participate now!</h2>
 									<div class="form__row layout palm-layout--stacked" role="group">
 										<input placeholder="Name" name="name" type="text" class="form__el layout__item"
@@ -364,8 +364,15 @@
 								</select>
 								<progress class="form__upload"></progress>
 								<label class="form__el" for="project-upload">
+<<<<<<< HEAD
 									Upload your file (.jpg/.png)
 									<input @change="image_validation" type="file" name="project-upload" id="project-upload" accept=".jpg,.png" class="hidden">
+=======
+									Upload your file (.jpg/.jpeg/.png)
+									<input @change="image_validation" type="file" name="project-upload" id="project-upload"
+									accept=".jpg,.jpeg,.png" class="hidden">
+									<span v-if="file_error !== undefined" v-bind="file_error" class="error">{{file_error}}</span>
+>>>>>>> 12e2ed7e9f5024bed4e72d4293de50d44f2afcfa
 								</label>
 							</div>
 							<textarea placeholder="Project description" maxlength="1000" name="project-desc" id="project-desc" class="form__el layout__item" maxlength="1000"></textarea>
@@ -619,12 +626,11 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 <script src="https://npmcdn.com/flickity@1.1/dist/flickity.pkgd.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="src/js/jquery.js"></script>
 <script src="src/js/libs/plugins.js"></script>
 <script src="src/js/utils.js"></script>
 <script src="src/js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/vuejs-paginator/2.0.0/vuejs-paginator.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="src/js/vue.js"></script>
 <script src="build/app.js"></script>
 
 </body>

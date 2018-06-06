@@ -1317,7 +1317,8 @@ label[for="project-upload"]:active {
 }
 
 .error {
-	border-color: #FF0 !important
+	border-color: #FF0 !important;
+	color: red !important;
 }
 
 .privacy {
