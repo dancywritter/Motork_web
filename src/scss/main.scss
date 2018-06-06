@@ -1,3 +1,142 @@
+$bdcolor: #dedede;
+
+
 label[for="project-upload"] {
     overflow: hidden;
+}
+.columns {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+
+	.u-full-widths {
+	    border: 1px solid $bdcolor;
+	    float: left;
+	    width: 100%;
+	    margin-bottom: 30px;
+	    text-align: center;
+	    padding: 10px;
+
+		.thumbnail {
+		    height: 120px;
+		    display: inline-block;
+		    vertical-align: middle;
+		}
+		span {
+		    display: block;
+		}
+		.make {
+			font-size: 13px;
+		}
+		.car_id {
+			font-size: 13px;
+		}
+		.modal {
+		    font-weight: bold;
+		}
+	}
+}
+
+#gellery__paging {
+    margin-bottom: 40px;
+
+    .gallery__paging__cmd.gallery__paging__cmd--symbol {
+	    line-height: 30px;
+	    height: 40px;
+	    padding: 0;
+	    width: 40px;
+	    display: inline-block;
+	    vertical-align: top;
+	    font-size: 20px;
+	}
+	span {
+		width: 40px;
+		display: inline-block;
+		margin: 0px 4px;
+
+		.gallery__paging__cmd {
+			width: 100%;
+			height: 100%;
+		}
+		.is-active {
+			border-bottom: 1px solid;
+		}
+	}
+}
+
+.form__el.layout__item {
+    border: 1px solid #dedede;
+    width: 33.3%;
+    display: inline-block !important;
+}
+span.checkbox__text {
+    display: inline-block;
+    width: calc(100% - 3.3em);
+    overflow: hidden;
+    vertical-align: top;
+
+    button#js-showprivacy {
+		width: 100% !important;
+		padding: 0px 10px 0px 0px;
+		float: left;
+		letter-spacing: 0px;
+		text-transform: none;
+		text-align: left;
+		border: none;
+	}
+}
+
+@media (max-width: 600px) {
+	.slider__head {
+		max-width: 90%;
+		.slider__head__el.heading {
+		    font-size: 20px;
+		    margin-bottom: 10px;
+		}
+		.slider__head__el.slider__copy {
+			font-size: 14px;
+			line-height: 20px;
+		}
+	}
+	.layout__item {
+		flex: none;
+		width: 100% !important;
+		-webkit-box-flex: unset;
+		float: left;
+	}
+	.heading--branded {
+		margin-top: 20px;
+	}
+	.form__row > .layout__item {
+		margin-right: 0px !important;
+	}
+	.form__el.layout__item {
+	    margin-left: 0px;
+	    margin-right: 0px;
+	}
+	label[for="project-upload"] {
+		overflow: hidden;
+		position: static;
+	}
+	.btn {
+	    min-width: 120px !important;
+	    float: left;
+	    margin-left: 0px;
+	}
+	.btn ~ .btn.btn--main {
+		margin-left: 5px;
+		width: 100px;
+	}
+	.form-wrapper {
+	    width: 100%;
+	}
+	.two.columns {
+	    margin-left: 0px !important;
+	}
+	.columns .u-full-widths .thumbnail {
+	    height: auto;
+	}
+	.btn ~ .btn.btn--sec {
+	    margin-left: 5px;
+	}
 }
